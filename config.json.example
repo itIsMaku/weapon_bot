@@ -2,5 +2,19 @@
     "bot": {
         "token": "",
         "client_id": ""
+    },
+    "api": {
+        "token": "abc",
+        "url": "https://api.example.com"
+    },
+    "factions": {
+        "test": {
+            "title": "",
+            "errorlog": "",
+            "guild": "",
+            "invoices": [""],
+            "crafting": "",
+            "shop": ""
+        }
     }
 }
