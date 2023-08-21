@@ -1,20 +1,10 @@
 {
     "bot": {
-        "token": "",
-        "client_id": ""
+        "token": "abc",
+        "client_id": "1234"
     },
     "api": {
         "token": "abc",
-        "url": "https://api.example.com"
-    },
-    "factions": {
-        "test": {
-            "title": "",
-            "errorlog": "",
-            "guild": "",
-            "invoices": [""],
-            "crafting": "",
-            "shop": ""
-        }
+        "url": "http://localhost:8081"
     }
 }

@@ -21,6 +21,6 @@ export function registerEvents() {
     for (const file of files) {
         const eventFile = require(`../events/${file}`);
         eventFile.event;
-        logger.info(`Registered ${file} event handler.`);
+        logger.info(`Bot | Registered ${file} event handler.`);
     }
 }
