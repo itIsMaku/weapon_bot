@@ -8,7 +8,7 @@ import { parseCrafting, parseInvoice, parseShop } from "../utils/parser";
 import axios from "axios";
 import { factions } from "../factions";
 
-function sendErrorLog(title: string, content: string, faction: Faction) {
+export function sendErrorLog(title: string, content: string, faction: Faction) {
     let guild = client.guilds.resolve(faction.guild);
     // console.log(guild);
     if (guild == undefined) return;

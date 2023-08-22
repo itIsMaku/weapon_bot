@@ -36,6 +36,7 @@ export function parseInvoice(message: Message) {
         price: price,
         target: target,
         target_id: targetId,
+        date: message.createdAt.toISOString().slice(0, 19).replace("T", " "),
         description: text,
     };
 }
@@ -79,6 +80,7 @@ export function parseCrafting(message: Message) {
         item: item,
         price: money,
         weapon_pieces: components,
+        date: message.createdAt.toISOString().slice(0, 19).replace("T", " "),
     };
 }
 
@@ -118,6 +120,7 @@ export function parseShop(message: Message) {
         charid: charId,
         item: item,
         price: money,
+        date: message.createdAt.toISOString().slice(0, 19).replace("T", " "),
         count: count,
     };
 }
