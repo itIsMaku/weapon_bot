@@ -5,7 +5,7 @@ import logger from "./utils/logger";
 import { registerEvents } from "./abstract/event";
 import axios from "axios";
 import { cacheFactions, factions, updater } from "./factions";
-import { parseCrafting, parseInvoice } from "./utils/parser";
+import { parseCrafting, parseInvoice, parseShop } from "./utils/parser";
 import { sendErrorLog } from "./events/messageEvent";
 
 export const client = new Client({
@@ -29,71 +29,40 @@ client.on("ready", async () => {
 
     // setTimeout(() => {
     //     let guild = client.guilds.resolve("975469293728849920");
-    //     let channel = guild?.channels.resolve("975483118150647838");
+    //     let channel = guild?.channels.resolve("981614968153710602");
     //     if (channel instanceof TextChannel) {
     //         channel.messages
-    //             .fetch({ after: "1141366160621834270" })
+    //             .fetch({ after: "1143236688588578917" })
     //             .then((messages) => {
     //                 messages.forEach((message) => {
-    //                     let crafting = parseCrafting(message);
-    //                     if (crafting.error != undefined) {
-    //                         console.log(crafting.error);
+    //                     let shop = parseShop(message);
+    //                     if (shop.error != undefined) {
+    //                         console.log(shop.error);
     //                         return;
     //                     }
-    //                     const res = axios.post(
-    //                         `${config.api.url}/api/faction/weapon/crafting`,
-    //                         crafting,
-    //                         {
-    //                             headers: {
-    //                                 "Content-Type": "application/json",
-    //                                 authorization: config.api.token,
-    //                             },
-    //                         }
+    //                     console.log(
+    //                         `INSERT INTO shop (faction, ic_name, ooc_name, charid, item, price, count) VALUES ('weapon', '${shop.ic_name}', '${shop.ooc_name}', '${shop.charid}', '${shop.item}', '${shop.price}', '${shop.count}');`
     //                     );
-    //                     res.then((response) => {
-    //                         if (response.status == 200) {
-    //                             message.react("👌");
-    //                             console.log("Crafting success");
-    //                         }
-    //                     });
-    //                     res.catch((error) => {
-    //                         console.log(error);
-    //                     });
+    //                     // const res = axios.post(
+    //                     //     `${config.api.url}/api/faction/weapon/crafting`,
+    //                     //     crafting,
+    //                     //     {
+    //                     //         headers: {
+    //                     //             "Content-Type": "application/json",
+    //                     //             authorization: config.api.token,
+    //                     //         },
+    //                     //     }
+    //                     // );
+    //                     // res.then((response) => {
+    //                     //     if (response.status == 200) {
+    //                     //         message.react("👌");
+    //                     //         console.log("Crafting success");
+    //                     //     }
+    //                     // });
+    //                     // res.catch((error) => {
+    //                     //     console.log(error);
+    //                     // });
     //                 });
-    //                 let last = messages.last();
-    //                 if (channel instanceof TextChannel) {
-    //                     channel.messages
-    //                         .fetch({ after: last?.id })
-    //                         .then((messages) => {
-    //                             messages.forEach((message) => {
-    //                                 let crafting = parseCrafting(message);
-    //                                 if (crafting.error != undefined) {
-    //                                     console.log(crafting.error);
-    //                                     return;
-    //                                 }
-    //                                 const res = axios.post(
-    //                                     `${config.api.url}/api/faction/weapon/crafting`,
-    //                                     crafting,
-    //                                     {
-    //                                         headers: {
-    //                                             "Content-Type":
-    //                                                 "application/json",
-    //                                             authorization: config.api.token,
-    //                                         },
-    //                                     }
-    //                                 );
-    //                                 res.then((response) => {
-    //                                     if (response.status == 200) {
-    //                                         message.react("👌");
-    //                                         console.log("Crafting success");
-    //                                     }
-    //                                 });
-    //                                 res.catch((error) => {
-    //                                     console.log(error);
-    //                                 });
-    //                             });
-    //                         });
-    //                 }
     //             });
     //     }
     // }, 2000);

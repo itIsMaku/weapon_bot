@@ -99,7 +99,7 @@ export function parseShop(message: Message) {
         };
     }
     const match = description.match(
-        /Peníze do kasy: (\d+)\nItem: (.*)\nPočet: (\d+)\nCharID: (.*)\nOOC Jméno: (.*)\nIC Jméno: (.*)/
+        /Peníze do kasy: (\d+)\n Item: (.*)\n Počet: (\d+)\n CharID: (.*)\n OOC Jméno: (.*)\n IC Jméno: (.*)/
     );
     if (!match) {
         return {
